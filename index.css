@@ -1808,12 +1808,12 @@ body {
     background-position: center;
 }
 .pro2 {
-    background-image: url("../img/background2.jpg");
+    background-image: url("background2.jpg");
     background-size: cover;
     background-position: center;
 }
 .pro3 {
-    background-image: url("../img/background3.jpg");
+    background-image: url("background3.jpg");
     background-size: cover;
     background-position: center;
 }
