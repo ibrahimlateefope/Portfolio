@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lateef Ibrahim — Full Stack Developer & Art Director</title>
+        <meta
+            name="description"
+            content="Lateef Ibrahim — Full Stack Developer & Art Director. Bringing life to startups and web projects. Available for freelance, on-site & remote jobs."
+        />
+        <meta
+            property="og:title"
+            content="Lateef Ibrahim — Full Stack Developer"
+        />
+        <meta
+            property="og:description"
+            content="An artist and art director bringing life to startups and web projects."
+        />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Devicons -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
+        />
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <!-- Progress bar -->
+        <div id="progress-bar"></div>
+
+        <!-- Cursor -->
+        <div id="cursor">
+            <div id="cur-dot"></div>
+            <div id="cur-ring"></div>
+        </div>
+
+        <!-- Boot -->
+        <div id="boot">
+            <div class="boot-box">
+                <div class="boot-logo">LATEEF</div>
+                <div class="b-line" id="b1">
+                    <span class="bl-label">SYS&gt;</span>Initialising broadcast
+                    system...
+                </div>
+                <div class="b-line" id="b2">
+                    <span class="bl-label">NET&gt;</span>Signal detected — FM
+                    98.4 MHz Oyo state
+                </div>
+                <div class="b-line" id="b3">
+                    <span class="bl-label">ID&gt;</span>&nbsp;Subject confirmed:
+                    LATEEF IBRAHIM
+                </div>
+                <div class="b-line" id="b4">
+                    <span class="bl-label">CLR&gt;</span>Clearance level: Full
+                    Access
+                </div>
+                <div class="b-line" id="b5">
+                    <span class="bl-label">STA&gt;</span>Status: Open to work ·
+                    Remote
+                </div>
+                <div class="boot-progress" id="bprog">
+                    <div class="boot-fill" id="bfill"></div>
+                </div>
+                <div class="boot-ready" id="bready">◉ BROADCAST READY</div>
+            </div>
+        </div>
+
+        <!-- Ticker -->
+        <div id="ticker">
+            <div class="ticker-track">
+                <span>◉ Available for Freelance</span
+                ><span class="ticker-dot">·</span>
+                <span>Full Stack Developer</span
+                ><span class="ticker-dot">·</span> <span>Art Director</span
+                ><span class="ticker-dot">·</span> <span>Nigeria (Remote)</span
+                ><span class="ticker-dot">·</span> <span>Open to Work</span
+                ><span class="ticker-dot">·</span>
+                <span>3 Years Experience</span><span class="ticker-dot">·</span>
+                <span>React · Python · Firebase</span
+                ><span class="ticker-dot">·</span>
+                <span>◉ Available for Freelance</span
+                ><span class="ticker-dot">·</span>
+                <span>Full Stack Developer</span
+                ><span class="ticker-dot">·</span> <span>Art Director</span
+                ><span class="ticker-dot">·</span> <span>Nigeria (Remote)</span
+                ><span class="ticker-dot">·</span> <span>Open to Work</span
+                ><span class="ticker-dot">·</span>
+                <span>3 Years Experience</span><span class="ticker-dot">·</span>
+                <span>React · Python · Supabase</span
+                ><span class="ticker-dot">·</span>
+            </div>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <a href="#" class="nav-logo"
+                >Lateef<span class="nav-logo-dot">.</span></a
+            >
+            <div class="nav-center">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <!-- <a href="#experience" class="nav-link">Experience</a>-->
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-right">
+                <button class="theme-btn" id="themeToggle" title="Toggle theme">
+                    ☀
+                </button>
+                <a href="#contact" class="nav-cta">Let's Talk</a>
+                <button class="ham-btn" id="hamBtn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-nav">
+            <a href="#about" class="mob-link" onclick="closeMob()">About</a>
+            <a href="#skills" class="mob-link" onclick="closeMob()">Skills</a>
+            <a href="#projects" class="mob-link" onclick="closeMob()"
+                >Projects</a
+            >
+            <!-- <a href="#experience" class="mob-link" onclick="closeMob()"
+                >Experience</a
+            >-->
+            <a href="#contact" class="mob-link" onclick="closeMob()">Contact</a>
+        </div>
+
+        <!-- ══ HERO ══ -->
+        <section id="hero">
+            <div class="hero-grid"></div>
+            <div class="hero-mesh"><canvas id="meshCanvas"></canvas></div>
+
+            <div class="hero-content">
+                <div class="hero-eyebrow" id="hEye">
+                    <div class="hero-eyebrow-pill">
+                        <span class="eyebrow-dot"></span>
+                        Available for hire
+                    </div>
+                    <span class="hero-eyebrow-freq"
+                        >FM 98.4 · BROADCASTING FROM Oyo state, NIGERIA</span
+                    >
+                </div>
+
+                <h1 class="hero-headline" id="hTitle">
+                    <span>LATEEF</span>
+                    <span class="line-outline">IBRAHIM</span>
+                </h1>
+            </div>
+
+            <div class="hero-bottom" id="hBottom">
+                <p class="hero-bio">
+                    An artist a developer with the notion of bringing life to
+                    startups and web projects — one precise, intentional build
+                    at a time.
+                </p>
+                <div class="hero-stats">
+                    <span class="hero-stats-num">3+</span>
+                    <span class="hero-stats-label">Years Active</span>
+                </div>
+                <div class="hero-role-block">
+                    <span class="hero-title-tag"
+                        >Full Stack Developer & Art Director</span
+                    >
+                    <span class="hero-location-txt"
+                        >Oyo state, Nigeria · Remote</span
+                    >
+                </div>
+                <!-- Download CV Button -->
+                <a
+                    href="files/Lateef_Ibrahim_Opeyemi_CV.docx"
+                    download
+                    class="btn-download-cv"
+                >
+                    Download CV
+                </a>
+            </div>
+
+            <div class="scroll-cue" id="scrollCue">
+                <span class="scroll-cue-txt">Scroll</span>
+                <div class="scroll-cue-line"></div>
+            </div>
+        </section>
+
+        <!-- ══ ABOUT ══ -->
+        <section id="about" class="section">
+            <div class="wrap">
+                <div class="sec-label fade-up">
+                    <span class="sec-num">01</span>
+                    <span class="sec-dash"></span>
+                    <span class="sec-title">Personnel File</span>
+                </div>
+
+                <div class="about-grid">
+                    <div class="profile-card fade-up">
+                        <div class="profile-photo">
+                            <img src="img/profile.png" alt="Lateef Ibrahim" />
+
+                            <div class="profile-photo-badge">◉ Open</div>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-name">Lateef Ibrahim</div>
+                            <div class="profile-sub">
+                                fullstack.dev & art.dir
+                            </div>
+                            <div class="profile-row">
+                                <span class="lbl">Location</span
+                                ><span class="val">Oyo state, Nigeria</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="lbl">Mode</span
+                                ><span class="val">Remote</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="lbl">Status</span
+                                ><span class="val avail">● Open to Work</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="lbl">Availability</span
+                                ><span class="val">Freelance / Full-time</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="lbl">Since</span
+                                ><span class="val">2022</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="about-heading fade-up">
+                            CRAFTING DIGITAL<br /><em>EXPERIENCES</em
+                            ><br />WORTH REMEMBERING
+                        </h2>
+                        <p class="about-p fade-up">
+                            Lateef is a full stack developer and art director
+                            who approaches software the way a film director
+                            approaches a set — with obsessive attention to
+                            detail, a clear vision, and an unshakeable belief
+                            that good engineering and great design are the same
+                            discipline.
+                        </p>
+                        <p class="about-p fade-up">
+                            With years of building products for startups and
+                            digital brands, I specialises in turning rough ideas
+                            into precise, production-grade digital experiences.
+                            From database architecture to pixel-perfect UI,
+                            every layer of the stack gets the same degree of
+                            care.
+                        </p>
+                        <div class="about-divider"></div>
+                        <div class="stats-row">
+                            <div class="stat-block fade-up">
+                                <div class="stat-n">10+</div>
+                                <div class="stat-l">Projects Done.</div>
+                            </div>
+                            <div class="stat-block fade-up">
+                                <div class="stat-n">3+</div>
+                                <div class="stat-l">Years Experience</div>
+                            </div>
+                            <div class="stat-block fade-up">
+                                <div class="stat-n">100%</div>
+                                <div class="stat-l">Remote Ready</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SKILLS ══ -->
+        <section id="skills" class="section">
+            <div class="wrap">
+                <div class="sec-label fade-up">
+                    <span class="sec-num">02</span>
+                    <span class="sec-dash"></span>
+                    <span class="sec-title">Equipment Manifest</span>
+                </div>
+
+                <div class="skills-intro fade-up">
+                    <h2 class="skills-heading">TECH<br /><em>STACK</em></h2>
+                    <p class="skills-desc">
+                        A full arsenal of modern tools across the entire product
+                        stack — from database design and server-side logic, to
+                        component systems and pixel-level UI polish. Every tool
+                        chosen with intent.
+                    </p>
+                </div>
+
+                <div class="skills-categories">
+                    <!-- Frontend -->
+                    <div class="fade-up">
+                        <div class="skill-cat-title">Frontend Development</div>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-react-original colored"
+                                ></i>
+                                <span class="skill-name">React</span>
+                                <span class="skill-level expert">Expert</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-javascript-plain colored"
+                                ></i>
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level expert">Expert</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-html5-plain colored"
+                                ></i>
+                                <span class="skill-name">HTML5</span>
+                                <span class="skill-level expert">Expert</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-css3-plain colored"
+                                ></i>
+                                <span class="skill-name">CSS3</span>
+                                <span class="skill-level expert">Expert</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-typescript-plain colored"
+                                ></i>
+                                <span class="skill-name">TypeScript</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-sass-original colored"
+                                ></i>
+                                <span class="skill-name">Sass</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="fade-up">
+                        <div class="skill-cat-title">Backend & Server</div>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-python-plain colored"
+                                ></i>
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-php-plain colored"
+                                ></i>
+                                <span class="skill-name">PHP</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-nodejs-plain colored"
+                                ></i>
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-express-original"
+                                ></i>
+                                <span class="skill-name">Express</span>
+                                <span class="skill-level mid">Proficient</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database & Cloud -->
+                    <div class="fade-up">
+                        <div class="skill-cat-title">Database & Cloud</div>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-firebase-plain colored"
+                                ></i>
+                                <span class="skill-name">Firebase</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <!-- Supabase SVG -->
+                                <span class="skill-icon">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.131 12.88.71 14.09 1.824 14.09h9.585a.42.42 0 0 1 .407.544L9.31 22.839c-.276.985.867 1.787 1.674 1.136l12.21-10.145c.76-.633.157-1.816-.84-1.816h-9.94a.42.42 0 0 1-.396-.572l1.88-11.406z"
+                                            fill="#3ECF8E"
+                                        />
+                                    </svg>
+                                </span>
+                                <span class="skill-name">Supabase</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-postgresql-plain colored"
+                                ></i>
+                                <span class="skill-name">PostgreSQL</span>
+                                <span class="skill-level mid">Proficient</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-mongodb-plain colored"
+                                ></i>
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-level mid">Proficient</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="fade-up">
+                        <div class="skill-cat-title">Tools & Design</div>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-git-plain colored"
+                                ></i>
+                                <span class="skill-name">Git</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-github-original"
+                                    style="font-size: 2rem"
+                                ></i>
+                                <span class="skill-name">GitHub</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-figma-plain colored"
+                                ></i>
+                                <span class="skill-name">Figma</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-vscode-plain colored"
+                                ></i>
+                                <span class="skill-name">VS Code</span>
+                                <span class="skill-level expert">Expert</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-vercel-original"
+                                ></i>
+                                <span class="skill-name">Vercel</span>
+                                <span class="skill-level adv">Advanced</span>
+                            </div>
+                            <div class="skill-card">
+                                <i
+                                    class="skill-icon devicon-docker-plain colored"
+                                ></i>
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-level mid">Proficient</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ PROJECTS ══ -->
+        <section id="projects" class="section">
+            <div class="wrap">
+                <div class="sec-label fade-up">
+                    <span class="sec-num">03</span>
+                    <span class="sec-dash"></span>
+                    <span class="sec-title">Frequency Stations</span>
+                </div>
+
+                <div class="projects-header fade-up">
+                    <h2 class="projects-heading">SELECTED<br />WORK</h2>
+                    <span class="proj-count-tag"
+                        >3 CASE STUDIES · 2022–2025</span
+                    >
+                </div>
+
+                <div class="projects-list">
+                    <!-- Project 1 -->
+                    <div class="proj-card fade-up">
+                        <div class="proj-info">
+                            <div class="proj-top">
+                                <div class="proj-index">
+                                    STATION 01 · FM 98.4 · 2025
+                                </div>
+                                <h3 class="proj-name">BlazeBlog</h3>
+                                <p class="proj-desc">
+                                    A real-time AI blogging platform built for
+                                    creators and businesses — enabling automated
+                                    content generation, smart publishing, and
+                                    seamless blog management from any device.
+                                </p>
+                                <div class="proj-tags">
+                                    <span class="proj-tag">HTML5</span>
+                                    <span class="proj-tag">Firebase</span>
+                                    <span class="proj-tag">JavaScript</span>
+                                    <span class="proj-tag">Tailwind Css</span>
+                                </div>
+                            </div>
+                            <div class="proj-bottom">
+                                <div class="proj-meta-pair">
+                                    <div class="proj-meta-lbl">Role</div>
+                                    <div class="proj-meta-val">
+                                        Lead Developer & UI Director
+                                    </div>
+                                </div>
+                                <div class="proj-link-group">
+                                    <a
+                                        href="https://blazeblog.vercel.app/index.html"
+                                        class="pl primary"
+                                        >↗ Live Site</a
+                                    >
+                                    <a
+                                        href="https://github.com/ibrahimlateefope/Ai-blog-blaze-.git"
+                                        class="pl"
+                                        >⌥ GitHub</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-visual pro1">
+                            <canvas
+                                class="proj-visual-canvas"
+                                id="pc0"
+                            ></canvas>
+                            <div class="proj-role-badge">2025 · 4 months</div>
+                            <div class="proj-outcome-box">
+                                <div class="proj-outcome-lbl">◉ Outcome</div>
+                                <div class="proj-outcome-txt">
+                                    Enabled creators to go from idea to
+                                    published article in minutes, simplifying
+                                    content creation with AI-powered automation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="proj-card fade-up">
+                        <div class="proj-info">
+                            <div class="proj-top">
+                                <div class="proj-index">
+                                    STATION 02 · FM 92.1 · 2025
+                                </div>
+                                <h3 class="proj-name">BlazeDesign Web-App</h3>
+                                <p class="proj-desc">
+                                    A Canva-inspired web app that combines AI
+                                    image generation, smart background removal,
+                                    and intuitive design tools, enabling
+                                    creators to produce professional visuals
+                                    quickly from any device.
+                                </p>
+                                <div class="proj-tags">
+                                    <span class="proj-tag">Html</span>
+                                    <span class="proj-tag">Apis</span>
+                                    <span class="proj-tag">JavaScript</span>
+                                    <span class="proj-tag">CSS3</span>
+                                    <span class="proj-tag">PWA</span>
+                                </div>
+                            </div>
+                            <div class="proj-bottom">
+                                <div class="proj-meta-pair">
+                                    <div class="proj-meta-lbl">Role</div>
+                                    <div class="proj-meta-val">
+                                        Full Stack Developer
+                                    </div>
+                                </div>
+                                <div class="proj-link-group">
+                                    <a
+                                        href="https://blazedesign.vercel.app/"
+                                        class="pl primary"
+                                        >↗ Live Site</a
+                                    >
+                                    <a
+                                        href="https://github.com/ibrahimlateefope/Blazedesign.git"
+                                        class="pl"
+                                        >⌥ GitHub</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-visual pro2">
+                            <canvas
+                                class="proj-visual-canvas"
+                                id="pc1"
+                            ></canvas>
+                            <div class="proj-role-badge">2026 · 3 months</div>
+                            <div class="proj-outcome-box">
+                                <div class="proj-outcome-lbl">◉ Outcome</div>
+                                <div class="proj-outcome-txt">
+                                    Demonstrated a fast design workflow where
+                                    users can generate images, remove
+                                    backgrounds, and export visuals in minutes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="proj-card fade-up">
+                        <div class="proj-info">
+                            <div class="proj-top">
+                                <div class="proj-index">
+                                    STATION 03 · FM 96.7 · 2024
+                                </div>
+                                <h3 class="proj-name">HSPM CHURCH WEBSITE</h3>
+                                <p class="proj-desc">
+                                    A dedicated church website built for HSPM to
+                                    strengthen communication and community.
+                                    Leaders can share updates easily while
+                                    members stay connected to sermons, events,
+                                    and ministry activities.
+                                </p>
+                                <div class="proj-tags">
+                                    <span class="proj-tag">CSS3</span>
+                                    <span class="proj-tag">Python</span>
+                                    <span class="proj-tag">Firebase</span>
+                                    <span class="proj-tag">TypeScript</span>
+                                    <span class="proj-tag">REST API</span>
+                                </div>
+                            </div>
+                            <div class="proj-bottom">
+                                <div class="proj-meta-pair">
+                                    <div class="proj-meta-lbl">Role</div>
+                                    <div class="proj-meta-val">
+                                        Fullstack Developer & Design Architect
+                                    </div>
+                                </div>
+                                <div class="proj-link-group">
+                                    <a
+                                        href="https://hspm.vercel.app/"
+                                        class="pl primary"
+                                        >↗ Live Site</a
+                                    >
+                                    <a
+                                        href="https://github.com/ibrahimlateefope/Hspm-3rd.git"
+                                        class="pl"
+                                        >⌥ GitHub</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-visual pro3">
+                            <canvas
+                                class="proj-visual-canvas"
+                                id="pc2"
+                            ></canvas>
+                            <div class="proj-role-badge">2026 · 5 months</div>
+                            <div class="proj-outcome-box">
+                                <div class="proj-outcome-lbl">◉ Outcome</div>
+                                <div class="proj-outcome-txt">
+                                    Created a centralized platform for sermons,
+                                    events, and announcements, making it easier
+                                    for members to stay connected with the
+                                    church.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ EXPERIENCE ══ -->
+        <!--  <section id="experience" class="section">
+            <div class="wrap">
+                <div class="sec-label fade-up">
+                    <span class="sec-num">04</span>
+                    <span class="sec-dash"></span>
+                    <span class="sec-title">Transmission Log</span>
+                </div>
+
+                <div class="exp-layout">
+                    <div class="exp-sidebar fade-up">
+                        <h2 class="exp-sidebar-heading">
+                            WORK<br /><em>HISTORY</em>
+                        </h2>
+                        <p class="exp-sidebar-sub">
+                            3 years of building things that matter, for people
+                            who care about quality.
+                        </p>
+                    </div>
+
+                    <div class="exp-list">
+                        <div class="exp-item fade-up">
+                            <div>
+                                <div class="exp-company">Freelance</div>
+                                <div class="exp-role">
+                                    Full Stack Developer & Art Director
+                                </div>
+                                <p class="exp-desc">
+                                    Building web products for startups and
+                                    digital brands across Nigeria and remotely.
+                                    Handling everything from initial
+                                    architecture through to deployment — with a
+                                    focus on performance, aesthetics, and
+                                    business outcomes that last.
+                                </p>
+                            </div>
+                            <div class="exp-date">Jan 2025 —<br />Present</div>
+                        </div>
+
+                        <div class="exp-item fade-up">
+                            <div>
+                                <div class="exp-company">Meridian Labs</div>
+                                <div class="exp-role">Frontend Developer</div>
+                                <p class="exp-desc">
+                                    Joined a small product studio as sole
+                                    frontend engineer. Built and shipped 6
+                                    client products in under 9 months.
+                                    Introduced a component design system that
+                                    reduced new feature development time by 35%.
+                                </p>
+                            </div>
+                            <div class="exp-date">Mar 2024 —<br />Dec 2024</div>
+                        </div>
+
+                        <div class="exp-item fade-up">
+                            <div>
+                                <div class="exp-company">Volta Digital</div>
+                                <div class="exp-role">Junior Developer</div>
+                                <p class="exp-desc">
+                                    Started in a hybrid design/dev role at a Oyo
+                                    state-based digital agency. Delivered
+                                    responsive web builds for 12+ clients.
+                                    Promoted to leading UI development
+                                    independently within 4 months of joining.
+                                </p>
+                            </div>
+                            <div class="exp-date">Jun 2022 —<br />Feb 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <!-- ══ CONTACT ══ -->
+        <section id="contact" class="section">
+            <div class="contact-wrap">
+                <div class="sec-label fade-up">
+                    <span class="sec-num">05</span>
+                    <span class="sec-dash"></span>
+                    <span class="sec-title">Open Channel</span>
+                </div>
+
+                <div class="contact-grid">
+                    <div>
+                        <h2 class="contact-heading fade-up">
+                            LET'S BUILD<br /><em>SOMETHING</em><br />WORTH IT
+                        </h2>
+                        <p class="contact-sub fade-up">
+                            Whether it's a startup product, a brand experience,
+                            or something that doesn't have a name yet — if it's
+                            worth building, it's worth building right.
+                        </p>
+                        <a
+                            href="mailto: ibrahimlateefope@gmail.com"
+                            class="contact-email-link fade-up"
+                        >
+                            <span class="contact-email-icon">✉</span>
+                            ibrahimlateefope@gmail.com
+                        </a>
+                    </div>
+
+                    <div class="fade-up">
+                        <div class="contact-card">
+                            <div class="contact-card-head">
+                                <span class="contact-card-title"
+                                    >Direct Channels</span
+                                >
+                                <span class="avail-pill">Available Now</span>
+                            </div>
+                            <div class="contact-channels">
+                                <a
+                                    href="mailto: ibrahimlateefope@gmail.com"
+                                    class="ch-item"
+                                >
+                                    <div class="ch-icon">✉</div>
+                                    <div class="ch-info">
+                                        <div class="ch-name">Email</div>
+                                        <div class="ch-val">
+                                            ibrahimlateefope@gmail.com
+                                        </div>
+                                    </div>
+                                    <span class="ch-arrow">→</span>
+                                </a>
+                                <a
+                                    href="https://github.com/ibrahimlateefope"
+                                    target="_blank"
+                                    class="ch-item"
+                                >
+                                    <div class="ch-icon">
+                                        <i
+                                            class="devicon-github-original"
+                                            style="font-size: 1.1rem"
+                                        ></i>
+                                    </div>
+                                    <div class="ch-info">
+                                        <div class="ch-name">GitHub</div>
+                                        <div class="ch-val">
+                                            github.com/ibrahimlateefope
+                                        </div>
+                                    </div>
+                                    <span class="ch-arrow">→</span>
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/lateef-ibrahim-9b58303b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                    target="_blank"
+                                    class="ch-item"
+                                >
+                                    <div class="ch-icon">
+                                        <i
+                                            class="devicon-linkedin-plain colored"
+                                            style="font-size: 1.1rem"
+                                        ></i>
+                                    </div>
+                                    <div class="ch-info">
+                                        <div class="ch-name">LinkedIn</div>
+                                        <div class="ch-val">
+                                            linkedin.com/in/lateefibrahim
+                                        </div>
+                                    </div>
+                                    <span class="ch-arrow">→</span>
+                                </a>
+                                <a
+                                    href="https://x.com/purple_charts"
+                                    target="_blank"
+                                    class="ch-item"
+                                >
+                                    <div class="ch-icon">𝕏</div>
+                                    <div class="ch-info">
+                                        <div class="ch-name">Twitter / X</div>
+                                        <div class="ch-val">
+                                            @lateefibrahim_
+                                        </div>
+                                    </div>
+                                    <span class="ch-arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <span class="footer-left">LATEEF IBRAHIM</span>
+            <span class="footer-center">© 2026 — All rights reserved</span>
+            <span class="footer-right">FM 98.4 · Oyo state, Nigeria</span>
+        </footer>
+        <script src="index.js"></script>
+    </body>
+</html>
